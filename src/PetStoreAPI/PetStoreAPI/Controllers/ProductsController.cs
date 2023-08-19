@@ -67,6 +67,7 @@ namespace PetStoreAPI.Controllers
 
             product.Title = dto.Title;
             product.Brand = dto.Brand;
+            product.UpdatedAt = DateTime.Now;
 
             await _context.SaveChangesAsync();
 
