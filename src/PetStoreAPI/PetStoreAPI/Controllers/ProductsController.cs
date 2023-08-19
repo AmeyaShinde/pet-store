@@ -37,7 +37,7 @@ namespace PetStoreAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetAllProducts()
         {
-            var products = await _context.Products.ToListAsync();
+            var products = await _context.Products.OrderByDescending(q => q.CreatedAt).ToListAsync();
             return Ok(products);
         }
 
