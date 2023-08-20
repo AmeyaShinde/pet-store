@@ -28,7 +28,7 @@ const AddProduct: React.FC = () => {
             title: product.title
         }
         axios.post(baseUrl, data)
-             .then((response) => redirect("/products"))
+             .then((response) => redirect("/products", { state: { message: "Product Created Successfully" } }))
              .catch((error) => alert("Error"))
     }
 
